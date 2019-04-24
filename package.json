@@ -4,8 +4,24 @@
   "description": "A basic web calculator, used to practice JavaScript fullstack webd development.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devrun": "nodemon ./src/server/app.js",
+    "build": "webpack -w"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "nodemon": "^1.18.11",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.1"
+  }
 }

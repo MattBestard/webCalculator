@@ -1,0 +1,39 @@
+input {
+  margin-left: 10px;
+}
+
+#mount-point {
+  max-width: 320px;
+  margin: auto; /* center */
+}
+
+#buttons {
+  display: flex;
+}
+
+#answer {
+  border-color: blue;
+  border: solid;
+  height: 80px;
+  width: 200px;
+}
+
+.inputLine {
+  margin: 10px;
+}
+
+#result-space {
+  margin-top: 30px;
+  margin-top: 30px;
+}
+
+.button {
+  height: 30px;
+  line-height: 30px;
+  width: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: #ADD8E6;
+  border-radius: 25%;
+  text-align: center;
+}
