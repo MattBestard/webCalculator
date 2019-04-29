@@ -50,9 +50,17 @@ class Calculator extends React.Component {
         this.setState({result: answer})
         break;
       case "DIV":
-        response = await axios.post('/api/divide', {firstNum: num1, secondNum: num2});
-        answer = response.data.response;
-        this.setState({result: answer})
+        try {
+          if (num1 === 0) {
+            throw new error();
+          } else {
+            response = await axios.post('/api/divide', {firstNum: num1, secondNum: num2});
+            answer = response.data.response;
+            this.setState({result: answer})
+          }
+        } catch (error) {
+          this.setState({result: 'Cannot divide by zero!'})
+        }
         break;
       default:
         console.log("No operation like that is definied");
