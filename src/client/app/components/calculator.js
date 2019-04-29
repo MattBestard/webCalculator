@@ -27,23 +27,32 @@ class Calculator extends React.Component {
     }
   }
 
-  handleClick(event) {
+  async handleClick(event) {
     event.preventDefault();
     const num1 = this.state.integer1;
     const num2 = this.state.integer2;
-    // the following switch cases will be making Ajax http requests to the server
+    let response;
+    let answer;
     switch (event.target.id) {
       case "ADD":
+        response = await axios.post('/api/add', {firstNum: num1, secondNum: num2});
+        answer = response.data.response;
+        this.setState({result: answer})
         break;
-        this.setState({result: num1 + num2})
       case "SUB":
-        this.setState({result: num1 - num2})
+        response = await axios.post('/api/subtract', {firstNum: num1, secondNum: num2});
+        answer = response.data.response;
+        this.setState({result: answer})
         break;
       case "MULT":
-        this.setState({result: num1 * num2})
+        response = await axios.post('/api/multiply', {firstNum: num1, secondNum: num2});
+        answer = response.data.response;
+        this.setState({result: answer})
         break;
       case "DIV":
-        this.setState({result: num1 / num2})
+        response = await axios.post('/api/divide', {firstNum: num1, secondNum: num2});
+        answer = response.data.response;
+        this.setState({result: answer})
         break;
       default:
         console.log("No operation like that is definied");

@@ -13,25 +13,27 @@ app.use(express.static(__dirname + "/../client/public"));
 
 app.post('/api/add', (req, res) => {
   // Route for addition
-  // var answer = req.body.firstNum + req.body.secondNum;
-  // res.json({response: answer});
-  res.send("Add");
+  const answer = (req.body.firstNum) + (req.body.secondNum);
+  res.json({response: answer});
 });
 
 app.post('/api/subtract', (req, res) => {
   // Route for subtraction
-  res.send("Subtract");
+  const answer = (req.body.firstNum) - (req.body.secondNum);
+  res.json({response: answer});
 });
 
 
 app.post('/api/multiply', (req, res) => {
   // Route for multiplication
-  res.send("Multiply");
+  const answer = (req.body.firstNum) * (req.body.secondNum);
+  res.json({response: answer});
 });
 
 app.post('/api/divide', (req, res) => {
   // Route for division
-  res.send("Divide");
+  const answer = (req.body.firstNum) / (req.body.secondNum);
+  res.json({response: answer});
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}...`));
