@@ -1,5 +1,5 @@
 import React from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 
 class Calculator extends React.Component {
   constructor(props) {
@@ -29,18 +29,21 @@ class Calculator extends React.Component {
 
   handleClick(event) {
     event.preventDefault();
+    const num1 = this.state.integer1;
+    const num2 = this.state.integer2;
+    // the following switch cases will be making Ajax http requests to the server
     switch (event.target.id) {
       case "ADD":
-        this.setState({result: this.state.integer1 + this.state.integer2})
         break;
+        this.setState({result: num1 + num2})
       case "SUB":
-        this.setState({result: this.state.integer1 - this.state.integer2})
+        this.setState({result: num1 - num2})
         break;
       case "MULT":
-        this.setState({result: this.state.integer1 * this.state.integer2})
+        this.setState({result: num1 * num2})
         break;
       case "DIV":
-        this.setState({result: this.state.integer1 / this.state.integer2})
+        this.setState({result: num1 / num2})
         break;
       default:
         console.log("No operation like that is definied");
